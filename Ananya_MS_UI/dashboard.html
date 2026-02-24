@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+
+<h1 id="email">Loading...</h1>
+<p>You have logged successfully.</p>
+
+<script>
+    const email = localStorage.getItem("userEmail");
+    const heading = document.getElementById("email");
+
+    if (email !== null && email !== "") {
+        const username = email.split("@")[0];
+        heading.textContent = "Welcome to Dashboard " + username;
+    } else {
+        heading.textContent = "User not logged in";
+    }
+</script>
+
+</body>
+</html>
